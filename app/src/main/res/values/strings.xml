@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SystemCare Pro</string>
+    <string name="accessibility_service_description">SystemCare Pro requires accessibility access to provide device management and monitoring features.</string>
+    <string name="permission_required">Permission Required</string>
+    <string name="permission_denied">Please allow the required permissions to continue.</string>
+    <string name="allow">Allow</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="service_running">SystemCare Pro is running</string>
+    <string name="loading">Loading...</string>
+    <string name="enable_accessibility">Enable Accessibility</string>
+    <string name="accessibility_title">Accessibility Service</string>
+    <string name="device_management">Device Management</string>
+</resources>

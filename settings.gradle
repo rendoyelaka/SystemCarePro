@@ -1,0 +1,2 @@
+rootProject.name = "SystemCarePro"
+include ':app'
