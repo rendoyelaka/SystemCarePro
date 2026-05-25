@@ -2,6 +2,14 @@ plugins {
     id 'com.android.application'
 }
 
+configurations.all {
+    resolutionStrategy {
+        force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.10'
+        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.10'
+        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10'
+    }
+}
+
 android {
     compileSdk 34
     namespace 'com.system.caremanager'
@@ -45,7 +53,9 @@ android {
                 'META-INF/DEPENDENCIES',
                 'META-INF/LICENSE',
                 'META-INF/NOTICE',
-                'META-INF/*.kotlin_module'
+                'META-INF/*.kotlin_module',
+                'META-INF/AL2.0',
+                'META-INF/LGPL2.1'
             ]
         }
     }
