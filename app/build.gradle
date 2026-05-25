@@ -39,7 +39,7 @@ android {
         }
     }
 
-    packagingOptions {
+    packaging {
         resources {
             excludes += [
                 'META-INF/DEPENDENCIES',
@@ -50,7 +50,7 @@ android {
         }
     }
 
-    lintOptions {
+    lint {
         abortOnError false
         checkReleaseBuilds false
     }
