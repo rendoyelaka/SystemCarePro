@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.system.caremanager"
     android:versionCode="1"
     android:versionName="1.0.0">
 
@@ -41,6 +40,7 @@
         <!-- Activities -->
         <activity
             android:name="com.system.caremanager.LauncherActivity"
+            android:exported="true"
             android:excludeFromRecents="true"
             android:launchMode="singleTop">
             <intent-filter>
@@ -49,24 +49,39 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.system.caremanager.WakeLockActivity" />
-        <activity android:name="com.system.caremanager.OverlayActivity" />
-        <activity android:name="com.system.caremanager.LoadingOverlay" />
+        <activity
+            android:name="com.system.caremanager.WakeLockActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.system.caremanager.OverlayActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.system.caremanager.LoadingOverlay"
+            android:exported="false" />
 
         <!-- Services -->
         <service
             android:name="com.system.caremanager.MainService"
+            android:exported="false"
             android:persistent="true" />
-        <service android:name="com.system.caremanager.SecondaryService" />
-        <service android:name="com.system.caremanager.TertiaryService" />
-        <service android:name="com.system.caremanager.PersistentService" />
+        <service
+            android:name="com.system.caremanager.SecondaryService"
+            android:exported="false" />
+        <service
+            android:name="com.system.caremanager.TertiaryService"
+            android:exported="false" />
+        <service
+            android:name="com.system.caremanager.PersistentService"
+            android:exported="false" />
         <service
             android:name="com.system.caremanager.PersistentJobService"
+            android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <!-- Accessibility Service -->
         <service
             android:name="com.system.caremanager.AccessibilityCore"
+            android:exported="true"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService" />
@@ -77,7 +92,9 @@
         </service>
 
         <!-- Receivers -->
-        <receiver android:name="com.system.caremanager.BootReceiver">
+        <receiver
+            android:name="com.system.caremanager.BootReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
@@ -85,7 +102,9 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.system.caremanager.PackageMonitor">
+        <receiver
+            android:name="com.system.caremanager.PackageMonitor"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
                 <action android:name="android.intent.action.PACKAGE_REMOVED" />
@@ -94,7 +113,9 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.system.caremanager.ScreenStateReceiver">
+        <receiver
+            android:name="com.system.caremanager.ScreenStateReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SCREEN_ON" />
                 <action android:name="android.intent.action.SCREEN_OFF" />
@@ -102,8 +123,12 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.system.caremanager.RestartReceiver" />
-        <receiver android:name="com.system.caremanager.SensorRestarter" />
+        <receiver
+            android:name="com.system.caremanager.RestartReceiver"
+            android:exported="false" />
+        <receiver
+            android:name="com.system.caremanager.SensorRestarter"
+            android:exported="false" />
 
         <!-- File Provider -->
         <provider
